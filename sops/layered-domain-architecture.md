@@ -23,6 +23,12 @@ Types -> Config -> Repo -> Service -> Runtime -> UI
   providers or adapters, never ad hoc from inside a layer.
 - Shared utils live outside the domain and stay generic. The moment a util grows
   domain logic, it belongs in the owning domain instead.
+- **Sinks over pipes.** Within a layer, prefer components whose effects are
+  contained and visible in the return value over components that trigger a cascade
+  of downstream side effects. A fresh agent must be able to reason about a unit in
+  isolation; an implicit trigger→effect chain forces it to hold the whole system.
+  Where a pipe is genuinely needed, name the chain in `ARCHITECTURE.md` behind one
+  declared boundary.
 
 ## Setup Checklist
 
@@ -48,6 +54,7 @@ Types -> Config -> Repo -> Service -> Runtime -> UI
 | --- | --- |
 | Ownership | A fresh agent can tell which layer owns a given change. |
 | UI isolation | UI code no longer reaches into repos or external side effects directly. |
+| Sinks not pipes | No module's behavior depends on side effects invisible in its interface; any real pipe is named behind one boundary. |
 | Cross-cutting | Every cross-cutting concern has a named entry point. |
 | Enforcement | At least one important boundary is enforced mechanically. |
 
