@@ -61,6 +61,8 @@ export default withMermaid(
     description:
       "Baha's personal harness-engineering knowledge base, adapted for Claude Code — lectures, projects, and copy-ready templates.",
     lang: "en-US",
+    // Local dev/build serve from "/"; GitHub Pages sets DOCS_BASE=/harness-engineering/.
+    base: process.env.DOCS_BASE || "/",
     cleanUrls: true,
     ignoreDeadLinks: false,
     head: [["link", { rel: "icon", href: brandLogo }]],
