@@ -1,5 +1,13 @@
 # Harness Engineering — Personal Knowledge Base
 
+> **Archived (2026-07-01):** the SOPs and templates most relevant to
+> role-manifest and quality conventions (`layered-domain-architecture.md`,
+> `evaluator-rubric.md`, `clean-state-checklist.md`, `quality-document.md`)
+> have been folded into
+> [agent-fleet-orchestrator](https://github.com/ZeekrBaha/agent-fleet-orchestrator)'s
+> `docs/reference/` as that project's source-of-truth. This repo remains as
+> the full knowledge base and course adaptation; no further sync is planned.
+
 My Claude-Code-flavored adaptation of the [Learn Harness Engineering](https://walkinglabs.github.io/learn-harness-engineering/) course (English track), rendered as a VitePress site that looks like the original.
 
 ## §1 Mental model
